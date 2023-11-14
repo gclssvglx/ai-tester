@@ -12,6 +12,7 @@ end
 
 post "/" do
   client = OpenAI::Client.new(access_token: ENV["OPEN_AI_ACCESS_TOKEN"])
+  @prompt = params[:prompt]
 
   @reply = client.chat(
     parameters: {
